@@ -14,6 +14,6 @@ int main()
         printf("%c",c);
     }
     else
-    printf("Invalid input");
+    printf("Invalid input"); 
     return 0;
 }
