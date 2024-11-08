@@ -15,4 +15,4 @@ int main() {
 	short int arr2[] = {1, 2};
 	long int arr3[] = {100, 200};
 	printf("%lu  %lu  %lu", sizeof(arr1), sizeof(arr2), sizeof(arr3));
-}
+}  
