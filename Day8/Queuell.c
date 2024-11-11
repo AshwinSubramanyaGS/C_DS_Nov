@@ -18,7 +18,7 @@ int main()
     Node root=NULL;
     while(1){
         int x=0;
-        printf("\nPress 1 to Push 2 to Pop 3 to display\n");
+        printf("\nPress 1 to insert 2 to delete 3 to display\n");
         scanf("%d",&choice);
         switch(choice)
         {
@@ -39,15 +39,18 @@ Node delete(Node root)
 {
     if(root==NULL)
     {
-        printf("Stack Underflow\n");
+        printf("the Queue is empty\n");
         exit(1);
     }
     else
     {
-        Node temp=root;
-        printf("Poped element %d",temp->data);
-        root=root->next;
-        free(temp);
+        Node temp=root,del=NULL;
+        while(temp->next->next!=NULL)
+            temp=temp->next;
+        del=temp->next;
+        printf("deleted node %d",del->data);
+        temp->next=NULL;
+        free(del);
         return root;
     }
 }
@@ -63,17 +66,17 @@ Node add(Node root,int x)
     else
     {
         Node newnode;
+        
         newnode=(Node)malloc(sizeof(struct node));
         newnode->data=x;
         newnode->next=root;
-        root=newnode;
-        return root;
+        return newnode;
     }
 }
 void display(Node root)
 {
     if(root==NULL)
-        printf("Stack is empty\n");
+        printf("Queue is empty\n");
     else
     {
         
